@@ -37,7 +37,7 @@ public function store(Request $request)
     {
         $micropost = \App\Micropost::find($id);
 
-        if (\Auth::id() === $micropost->user_id) {
+        if (\Auth::id() == $micropost->user_id) {
             $micropost->delete();
         }
 
